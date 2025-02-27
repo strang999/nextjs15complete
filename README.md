@@ -1,8 +1,14 @@
+# Next.js 15 Project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Project Goals
+
+This repository serves as a practical project for recapping my existing knowledge of Next.js 14 while learning and applying new features introduced in Next.js 15. The focus is on refining my understanding of advanced concepts and best practices in modern Next.js development.
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +20,41 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start editing by modifying `app/page.tsx`. The page auto-updates as you make changes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a modern font family designed by Vercel.
 
-## Learn More
+## Recapping Next.js 14 Knowledge & Learning in Next.js 15
 
-To learn more about Next.js, take a look at the following resources:
+I already have a strong grasp of Next.js 14, including:
+- High-performance web app development using Next.js.
+- Next.js caching strategies for improved response times.
+- Authentication with Next Auth.
+- Utilizing Server Components for better streaming interfaces.
+- Optimizing image loading with Next.js Image component.
+- Modern form validation with React's useFormState hook.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+With Next.js 15, I am focusing on:
+- **Partial Prerendering (PPR)**: Enhancing performance by combining static and dynamic rendering.
+- **New Middleware Capabilities**: Expanding control over request/response handling.
+- **Improved Turbopack Integration**: Faster builds and optimized hot module replacement.
+- **Better Edge Runtime Support**: Leveraging serverless optimizations.
+- **Enhanced Error Handling and Logging**: Streamlined debugging and logging features.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Resources to Improve Next.js 15 Knowledge
+
+Explore these resources to enhance your understanding:
+
+- [Next.js 15 Release Notes](https://nextjs.org/blog/next-15) – Key features and improvements.
+- [Next.js Documentation](https://nextjs.org/docs) – In-depth knowledge about Next.js features and APIs.
+- [Learn Next.js](https://nextjs.org/learn) – Interactive tutorials for hands-on learning.
+- [Next.js GitHub Repository](https://github.com/vercel/next.js) – Contribute feedback and engage with the community.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Quickly deploy your Next.js app using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), built by the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For detailed deployment instructions, see the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
+
