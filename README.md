@@ -1,4 +1,4 @@
-# Next.js 15 Project
+# Reddit Clone Project (Next.js 15/TailwindCSS/Next Auth/Server Components)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
