@@ -2,6 +2,15 @@ import NextAuth from "next-auth";
 import Github from "next-auth/providers/github";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { db } from "@/db";
+import type { DefaultSession } from "next-auth";
+
+declare module "next-auth" {
+  interface Session extends DefaultSession {
+    user?: {
+      id: string;
+    } & DefaultSession["user"];
+  }
+}
 
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
@@ -23,15 +32,15 @@ export const {
       clientSecret: GITHUB_CLIENT_SECRET,
     }),
   ],
-  // callbacks: {
-  //   // Usually not needed, here we are fixing a bug in nextauth
-  //   //@ts-ignore
-  //   async session({ session, user }: any) {
-  //     if (session && user) {
-  //       session.user.id = user.id;
-  //     }
+  callbacks: {
+    // Usually not needed, here we are fixing a bug in nextauth
 
-  //     return session;
-  //   },
-  // },
+    async session({ session, user }) {
+      if (session?.user && user) {
+        session.user.id = user.id;
+      }
+
+      return session;
+    },
+  },
 });
