@@ -34,6 +34,44 @@ export function fetchPostsByTopicSlug(slug: string): Promise<PostWithData[]> {
   });
 }
 
+export function fetchPostsBySearchQuery(
+  query: string
+): Promise<PostWithData[]> {
+  return db.post.findMany({
+    include: {
+      topic: {
+        select: {
+          slug: true,
+        },
+      },
+      user: {
+        select: {
+          name: true,
+        },
+      },
+      _count: {
+        select: {
+          comments: true,
+        },
+      },
+    },
+    where: {
+      OR: [
+        {
+          title: {
+            contains: query,
+          },
+        },
+        {
+          content: {
+            contains: query,
+          },
+        },
+      ],
+    },
+  });
+}
+
 export function fetchTopPosts(): Promise<PostWithData[]> {
   return db.post.findMany({
     orderBy: {

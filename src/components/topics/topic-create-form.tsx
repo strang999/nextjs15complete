@@ -10,9 +10,9 @@ import {
 } from "@nextui-org/react";
 import * as actions from "@/actions";
 import { useActionState, startTransition } from "react";
-
+import FormButton from "@/components/common/form-button";
 export default function TopicCreateForm() {
-  const [formState, action] = useActionState(actions.createTopic, {
+  const [formState, action, isPending] = useActionState(actions.createTopic, {
     errors: {},
   });
 
@@ -27,22 +27,19 @@ export default function TopicCreateForm() {
   return (
     <Popover placement="left">
       <PopoverTrigger>
-        <>
-          <Button>Create Topic</Button>
-        </>
+        <Button>Create Topic</Button>
       </PopoverTrigger>
       <PopoverContent>
         <div className="flex flex-col gap-4 w-80 p-4">
           <Form onSubmit={handleSubmit}>
             <Input
-              type="text"
-              name="Name"
+              name="name"
+              label="Name"
               labelPlacement="outside"
               placeholder="Name"
               isInvalid={!!formState.errors.name}
               errorMessage={formState.errors.name?.join(", ")}
             />
-
             <Textarea
               name="description"
               label="Description"
@@ -51,7 +48,9 @@ export default function TopicCreateForm() {
               isInvalid={!!formState.errors.description}
               errorMessage={formState.errors.description?.join(", ")}
             />
-            <Button type="submit">Create</Button>
+
+            {formState.errors._form?.join(", ")}
+            <FormButton isLoading={isPending}>Save</FormButton>
           </Form>
         </div>
       </PopoverContent>

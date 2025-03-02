@@ -1,5 +1,4 @@
 import type { PostWithData } from "@/db/queries/posts";
-import type { Post, User, Topic } from "@prisma/client";
 import Link from "next/link";
 import paths from "@/paths";
 

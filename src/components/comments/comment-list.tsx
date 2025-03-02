@@ -1,8 +1,5 @@
 import CommentShow from "@/components/comments/comment-show";
-import {
-  CommentWithAuthor,
-  fetchCommentsByPostId,
-} from "@/db/queries/comments";
+import { fetchCommentsByPostId } from "@/db/queries/comments";
 
 interface CommentListProps {
   postId: string;
